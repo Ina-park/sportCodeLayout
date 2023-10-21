@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>[sports_code] pub_document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+	<meta name="viewport" content="width=1280">
+	<meta name="author" content="Ina">
+	<meta name="author-date(date)" content="">
+
+	<link rel="stylesheet" type="text/css" href="./addon/normalize/5.0.0/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../addon/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./addon/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/pub_document_style.css" />
+</head>
+
+<body id="legacy">
+	<!-- wrapper start -->
+	<div id="wrapper">
+		<!-- legacy-header start -->
+		<header>
+			<div id="lnb-header">
+				<h1 class="logo">
+					<a href="javascript:void(0);" onclick="location.reload();"><em class="blind">SPORTSCODE</em></a>
+				</h1>
+				<p class="date">project date :<br>2023.10.10 ~ 2023.11.10</p>
+			</div>
+			<!-- nav start -->
+			<nav id="lnb-list" role="navigation">
+				<div class="accordion-nav">
+					
+					<ul class="depth01">
+
+						<li class="noChild current">
+							<a href="#" onclick="linkFrame('./html/work-list.html');"><span>작업리스트</span></a>
+						</li>
+						<li class="hasChild">
+							<a href="#"><span>UI Component</span></a>
+							<ul class="depth02">
+								<li class="noChild"><a href="#" onclick="linkFrame('./html/Color.html');"><span>Color</span></a></li>
+								<li class="noChild"><a href="#" onclick="linkFrame('./html/Font.html');"><span>Font</span></a></li>
+								<li class="noChild"><a href="#" onclick="linkFrame('./html/Header.html');"><span>Header</span></a></li>
+								<li class="noChild"><a href="#" onclick="linkFrame('./html/Button.html');"><span>Button</span></a></li>
+								<li class="noChild"><a href="#" onclick="linkFrame('./html/Form.html');"><span>Form</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- //nav end -->
+		</header>
+		<!-- //legacy-header end -->
+		<!-- legacy-content start -->
+		<section id="legacy-content">
+			<iframe src="./html/work-list.html" id="legacy-content-frame" name="Legacy" width="100%"></iframe>
+		</section>
+		<!-- //legacy-content end -->
+		<!--<iframe src="/wmw/officeframe.html" width="0" height="0"></iframe>-->
+	</div>
+	<!-- //wrapper end -->
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" src="./addon/jquery/3.1.1/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="./addon/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/pub_document_legacy.js"></script>
+
+	<script type="text/javascript">
+		function linkFrame(url) {
+			$('#legacy-content-frame').attr('src', url);
+		};
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<?php include ("./common/head.html") ?>
+<body>
+
+	<!-- wrap(s) -->
+	<div id="wrap" class="wrap-home">
+
+		<!-- header(s) -->
+		<div id="header" class="header">
+			<!-- nav(s) -->
+			<nav id="nav" class="nav">
+				<div class="container">
+					<h1>
+						<a href="./home_login_before_01.html">
+							<i class="ico-logo"><em class="blind">SPORTS CODE</em></i>
+						</a>
+					</h1>
+					<div class="util">
+						<div class="util-profile">
+							<a href="javascript:void(0);" class="btn-profile">
+								<i class="ico-profile-01"></i>
+								<p>
+									스쿼시 이코치<br>
+									(sportscode_man)
+								</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- nav(e) -->
+		</div>
+		<!-- header(e) -->
+
+		<!-- page(s) -->
+		<main id="page" class="page-home">
+
+			<!-- container(s)-->
+			<section id="container" class="container">
+
+				<!-- contents(s)-->
+				<div id="contents" class="contents">
+					
+					<section class="section-home">
+
+						<div class="home-post-write">
+							<div class="group-01">
+								<div class="input-field group">
+									<div class="select-field">
+										<label for="selectOption1">
+											<select class="js-material-select" id="selectOption1">
+												<option value="">운동 선택</option>
+												<option value="">옵션1</option>
+												<option value="">옵션2</option>
+												<option value="">옵션3</option>
+												<option value="">옵션4</option>
+												<option value="">옵션5</option>
+											</select>
+										</label>
+									</div>
+								</div>
+
+								<div class="input-field">
+									<input type="text" placeholder="글 제목을 입력해주세요.">
+									<button type="button" class="input-search-clear"><i class="ico-search-clear"><em class="blind">입력내용 삭제 버튼</em></i></button>
+								</div>
+							</div>
+							<div class="group-02">
+								<div class="file-uploader">
+									<input type="text" id="fileUploaderSingle" value="">
+								</div>
+								
+							</div>
+							<div class="group-03">
+								<div class="editor-area">
+									<div style="display: flex;align-items: center;height: 100%;	color: var(--c-text-sub);font-size: 16px;">
+										에디터 영역
+									</div>
+								</div>
+							</div>
+							<div class="group-04">
+								<div class="input-field">
+									<input type="text" placeholder="해시태그를 입력해주세요(ex. #스포츠)">
+									<button type="button" class="input-search-clear"><i class="ico-search-clear"><em class="blind">입력내용 삭제 버튼</em></i></button>
+								</div>
+							</div>
+							<div class="btn-group d-flex">
+								<a href="javascript:void(0);" class="btn btn-primary btn-md waves-effect cancel">
+									<b class="b-700">취소</b>
+								</a>
+								<a href="javascript:void(0);" class="btn btn-primary btn-md waves-effect">
+									<b class="b-700">등록</b>
+								</a>
+							</div>
+						</div>
+	
+					</section>
+
+				</div>
+				<!-- contents(e)-->
+
+			</section>
+
+		</main>
+		<!-- page(e) -->
+
+		<script>
+			$(document).ready(function() {
+				// ajax-file-uploader
+				var ajaxConfig = {
+					ajaxRequester: function (config, uploadFile, pCall, sCall, eCall) {
+						var progress = 0
+						var interval = setInterval(() => {
+							progress += 10;
+							pCall(progress)
+							if (progress >= 100) {
+								clearInterval(interval)
+								const windowURL = window.URL || window.webkitURL;
+								sCall({
+									data: windowURL.createObjectURL(uploadFile.file)
+								})
+							}
+						}, 300)
+					}
+				}
+				$('#fileUploaderSingle').uploader(
+					{
+						ajaxConfig: ajaxConfig
+					}
+				);
+			});
+		</script>
+
+	</div>
+	<!-- wrap(e) -->
+
+</body>
+</html>
+
+<?php include ("./common/popup.html") ?>
